@@ -1,6 +1,6 @@
 #Héritage notions
 class Animal:
-    def ___init__(self, nom, espece):
+    def __init__(self, nom, espece):
         self.nom = nom
         self.espece = espece
     def se_deplacer(self):
@@ -8,13 +8,14 @@ class Animal:
     def faire_du_bruit(self):
         return f"{self.nom} fait du bruit"
 
-class Chien(Animal): # Héritage de la classe Animal
+class Chien(Animal):
     def __init__(self, nom, race):
-        super().__init__(nom, 'chien')  # Appel du constructeur de la classe parente
+        super().__init__(nom, 'chien') # Appel correct du constructeur parent
         self.race = race
-        def faire_du_bruit(self):  # Surcharge de la méthode faire_du_bruit
+
+    def faire_du_bruit(self):  # Surcharge de la méthode faire_du_bruit
             print(f"{self.nom} aboie")
-        def remuer_la_queue(self):
+    def remuer_la_queue(self):
             return f"{self.nom} remue la queue"
 
 class Chat(Animal): # Héritage de la classe Animal
@@ -26,7 +27,7 @@ class Chat(Animal): # Héritage de la classe Animal
 
 # Utilisation
 rex = Chien("Rex", "Berger Allemand")
-print(rex.remuer_la_queue)  # Rex remue la queue
+print(rex.remuer_la_queue())  # Rex remue la queue
 rex.faire_du_bruit()  # Rex aboie
 
 whiskers = Chat("Whiskers", "Gris")

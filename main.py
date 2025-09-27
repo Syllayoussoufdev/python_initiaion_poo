@@ -1,3 +1,5 @@
+#Classe de base
+#Syntaxe simple
 class Personne:
     def __init__(self, nom, age, anniv =False):  # Constructeur (__init__ au lieu de __construct)
         self.nom = nom  # self au lieu de $this
